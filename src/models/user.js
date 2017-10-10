@@ -3,7 +3,14 @@ export default {
     state: {
         username: 'jiangxiao',
     },
-    reducers: {},
+    reducers: {
+        changeUsername(state, { username }) {
+            return {
+                ...state,
+                username,
+            }
+        },
+    },
     effects: {},
     subscriptions: {},
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { Alert } from 'react-native'
 import { Button } from 'antd-mobile'
 import { StyleSheet, Text, View } from 'react-native'
+import { connect } from 'dva/mobile'
 
 class UserScreen extends React.Component {
     static navigationOptions = {
@@ -13,6 +14,11 @@ class UserScreen extends React.Component {
             'Button onClick!',
             'You did it!',
         )
+
+        this.props.dispatch({
+            type: 'user/changeUsername',
+            username: 'xiaoxiao'
+        })
     }
   
     render() {
@@ -37,4 +43,6 @@ const styles = StyleSheet.create({
     },
 })
 
-export default UserScreen
+export default connect((state) => {
+    return state
+})(UserScreen)
