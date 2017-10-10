@@ -16,8 +16,7 @@ class UserScreen extends React.Component {
         )
 
         this.props.dispatch({
-            type: 'user/changeUsername',
-            username: 'xiaoxiao'
+            type: 'user/fetchTest',
         })
     }
   
